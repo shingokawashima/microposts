@@ -19,6 +19,19 @@ class UsersController < ApplicationController
     @microposts = @user.microposts
   end
   
+  def follow(other_user)
+    following_relationships.create(followed_id: other_user.id)
+  end
+  
+  def unfollow(other_user)
+    following_relationships.find_by(followed_id: other_user.id).destroy
+  end
+  
+  def following_(other_user)
+    following_user.include?(other_user)
+  end
+    
+  
   private
   
   def user_params
