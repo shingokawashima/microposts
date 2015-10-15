@@ -18,7 +18,6 @@ class UsersController < ApplicationController
     @microposts = @user.microposts
   end
   
-<<<<<<< HEAD
   def follow(other_user)
     following_relationships.create(followed_id: other_user.id)
   end
@@ -31,7 +30,6 @@ class UsersController < ApplicationController
     following_user.include?(other_user)
   end
     
-=======
   def edit
     @user = User.find(params[:id])
   end
@@ -45,8 +43,6 @@ class UsersController < ApplicationController
       render 'edit'
     end
   end
-  
->>>>>>> user-profile
   
   private
   

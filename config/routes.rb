@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   get 'sessions/new'
 
   root to: 'static_pages#home'
-<<<<<<< HEAD
+
   get 'signup',  to: 'users#new'
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'
@@ -11,16 +11,6 @@ Rails.application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
   resources :microposts
   resources :relationships, only: [:create, :destroy]
-=======
-  get 'signup', to: 'users#new'
-  get 'login' => 'sessions#new'
-  post 'login' => 'sessions#create'
-  delete 'logout' => 'sessions#destroy'
-  
-  
-  resources :users
-  resources :sessions, only: [:new, :create, :destroy]
->>>>>>> user-profile
 
 
   # The priority is based upon order of creation: first created -> highest priority.
