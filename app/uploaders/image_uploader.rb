@@ -1,10 +1,9 @@
 # encoding: utf-8
 
 class ImageUploader < CarrierWave::Uploader::Base
-  include CarrierWave::MiniMagick
 
   # Include RMagick or MiniMagick support:
-  # include CarrierWave::RMagick
+  include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
@@ -18,10 +17,10 @@ class ImageUploader < CarrierWave::Uploader::Base
   end
   
   process :resize_to_fit => [200, 200]
-
+  
   # 別のスケールを設定
   version :thumb do
-    process :resize_to_fit => [50, 50]
+    process :resize_to_fit => [200, 200]
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
